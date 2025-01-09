@@ -34,7 +34,7 @@ Working with databases (sqlite)
 
 Import all the necessary libraries
 
-```
+```python
 import json
 import requests
 from datetime import datetime
@@ -53,7 +53,7 @@ from cv_bridge import CvBridge
 ```
 
 We initialize the ROS node and add the proxies necessary for the flight
-```
+```python
 rospy.init_node('flight')
 
 get_telemetry = rospy.ServiceProxy('get_telemetry', srv.GetTelemetry) 
@@ -64,13 +64,13 @@ bridge = CvBridge()
 ```
 
 Creating publishers for debugging topics
-```
+```python
 color = rospy.Publisher('test', Image, queue_size=1)
 hsv_topic = rospy.Publisher('hsv', Image, queue_size=1)
 orig_topic = rospy.Publisher('orig', Image, queue_size=1)
 ```
 Necessary constants
-```
+```python
 FLIGHT_HEIGHT = 1
 FLIGHT_SPEED = 0.7
 NUM_FRAME_CHECK = 10
